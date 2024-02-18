@@ -61,7 +61,7 @@ public class Logic
     public void process(int size) {
 
         // TODO -- add your code here
-        
+
         TopBottom_Borders(size);
         
         int spaces = size - 1;
@@ -77,16 +77,16 @@ public class Logic
             
             // строим ромб
             if (i == size - 1) {
-                System.out.println("|" + "<" + String.valueOf(znak).repeat(i * 2) + ">" + "|");
+                mOut.println("|" + "<" + String.valueOf(znak).repeat(i * 2) + ">" + "|");
                 spaces++;
             } else if (i < size) {
-                System.out.println("|" + " ".repeat(spaces) + "/" + String.valueOf(znak).repeat(i + i) + "\\" + " ".repeat(spaces) + "|");
+                mOut.println("|" + " ".repeat(spaces) + "/" + String.valueOf(znak).repeat(i + i) + "\\" + " ".repeat(spaces) + "|");
                 spaces--;
                 
                 // последнее вхождение в данное условие определит число знаков, от которого будем отталкиваться при создании второй части ромба
                 count = i;
             } else {
-                System.out.println("|" + " ".repeat(spaces) + "\\" + String.valueOf(znak).repeat(count + count) + "/" + " ".repeat(spaces) + "|");
+                mOut.println("|" + " ".repeat(spaces) + "\\" + String.valueOf(znak).repeat(count + count) + "/" + " ".repeat(spaces) + "|");
                 spaces++;
                 count--;
             }
