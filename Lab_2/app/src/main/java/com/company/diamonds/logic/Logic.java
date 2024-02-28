@@ -43,6 +43,14 @@ public class Logic
      * This is the method that will (eventually) get called when the
      * on-screen button labeled 'Process...' is pressed.
      */
+	private String repeat(String str, int count) {
+		StringBuilder res = new StringBuilder();
+		for (int i = 0; i < count; i++) {
+			res.append(str);
+		}
+		return res.toString();
+	}
+
 
     public void TopBottom_Borders(int size) {
         // определили конец нашего рисунка на координате size * 2 + 1
@@ -76,16 +84,16 @@ public class Logic
             
             // строим ромб
             if (i == size - 1) {
-                mOut.println("|" + "<" + String.valueOf(znak).repeat(i * 2) + ">" + "|");
+                mOut.println("|" + "<" + repeat(String.valueOf(znak), i * 2) + ">" + "|");
                 spaces++;
             } else if (i < size) {
-                mOut.println("|" + " ".repeat(spaces) + "/" + String.valueOf(znak).repeat(i + i) + "\\" + " ".repeat(spaces) + "|");
+                mOut.println("|" + repeat(" ", spaces)+ "/" + repeat(String.valueOf(znak), i + i) + "\\" + repeat(" ", spaces) + "|");
                 spaces--;
                 
                 // последнее вхождение в данное условие определит число знаков, от которого будем отталкиваться при создании второй части ромба
                 count = i;
             } else {
-                mOut.println("|" + " ".repeat(spaces) + "\\" + String.valueOf(znak).repeat(count + count) + "/" + " ".repeat(spaces) + "|");
+                mOut.println("|" + repeat(" ", spaces) + "\\" + repeat(String.valueOf(znak), count + count) + "/" + repeat(" ", spaces) + "|");
                 spaces++;
                 count--;
             }
