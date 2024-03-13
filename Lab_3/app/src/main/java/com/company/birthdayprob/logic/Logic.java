@@ -1,6 +1,7 @@
 package com.company.birthdayprob.logic;
 
 import java.util.Random;
+import java.util.ArrayList; // метод позволяет работать со списками
 import com.company.birthdayprob.ui.OutputInterface;
 
 /**
@@ -75,6 +76,36 @@ public class Logic
      */
     public double calculate(int size, int count) {
         // TODO -- add your code here
+        // оздаём массив(список) неопределённой длины
+        /* ArrayList<Integer> peopleList = new ArrayList<Integer>();
+        double counter = 0;
+
+        // проводим определённое количество эксперементов
+        for (int j = 0; j < count; j++) {
+            final Random random = new Random(j);
+
+            // для каждого эксперемента заполняем массив определённым количеством случайных чисел(дней рождений)
+            // благодаря библиотеке пользуемся удобными методами
+            for (int i = 0; i < size; i++) {
+                peopleList.add(random.nextInt(365));
+            }
+
+            /* ищем вхождение символа i, если символ встречается в массиве больше(то есть первое вхождение
+            * символа это и не есть последнее), тогда учитываем это в счётчике и выходим из цикла, так как по
+            * условию надо найти вхождение только у двух людей из группы */
+            // for (int i = 0; i < peopleList.size(); i++){
+
+               // if (peopleList.indexOf(peopleList.get(i)) != peopleList.lastIndexOf(peopleList.get(i))){
+                  //  counter++;
+                 //   break;
+              //  }
+           // }
+
+            // очищаем список для следущего эксперимента
+           // peopleList.clear();
+       // }
+       // return (counter / count * 100); */
+
         int[] peopleList = new int[size];
         double counter = 0; // нельзя что бы было int, потому что результат становится равен нулю(хз почему)
 
